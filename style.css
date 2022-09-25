@@ -223,18 +223,23 @@ header > section h1{
     line-height: 30px;
 }
 
-#div-2 > #boxes{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-column-gap: 20px;
+#boxes{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1.5rem 0;
+    flex-wrap: wrap;
+    /* display: grid; */
+    /* grid-template-columns: repeat(3,1fr);
+    grid-column-gap: 20px; */
 }
-#div-2 > #boxes .button{
-    justify-self: center;
-    grid-area: 2/span 3;
+#boxes .button{
     margin-top: 50px;
     border-radius: 2px;
     box-shadow: 0px 0px 10px 5px #011653;
     position: relative;
+    margin: 0 auto;
+    display: block;
 }
 
 .boxes{
@@ -244,6 +249,9 @@ header > section h1{
     font-family: var(--font);
     background-color: #14214B;
     position: relative;
+    min-width: 250px;
+    max-width: 450px;
+    flex: 1;
     transform: translateY(0px);
     transition: 1s;
     -webkit-transition: 1s;
@@ -287,6 +295,8 @@ header > section h1{
     border-radius: 20px;
     transform: rotate(-10deg);
     width: 50%;
+    height: 250px;
+    min-width: 300px;
     position: relative;
     box-shadow: 0px 0px 10px 10px #011653;
     /* border: solid; */
@@ -552,6 +562,14 @@ footer #nav-2 > ul > ul:nth-child(2) li a:hover{
 
 /* Responsiveness Index.html */
 /* Mobile Devices < 767px */
+@media screen and (max-width: 767px){
+    #section-1 .grid{
+        display: flex;
+        flex-direction: column;
+        margin: 50px 0px;
+        font-size: 1.2rem;
+    }
+}
 @media screen and (max-width:567px){
     *{
         max-width: 100%;
@@ -707,9 +725,8 @@ footer #nav-2 > ul > ul:nth-child(2) li a:hover{
         display: block;
         height: 200px;
         width: 100%;
-         transform: rotate(3deg);
-         
-        
+        transform: rotate(3deg);
+            
      }
      #section-1 > div .img-con::before{
          transform: rotate(-5deg);
