@@ -1,0 +1,342 @@
+a{
+    text-decoration: none !important;
+}
+li{
+    list-style: none;
+}
+
+header{
+    height: 100%;
+    background: linear-gradient(to bottom right,#28416B,#0C133E,#02091E 80%);
+    
+}
+header nav{
+    position: relative;
+    top:0;
+    transition: 1s all linear;
+}
+header #nav-bar a:not(.button){
+    font-size: .8rem;
+}
+header a{
+    color: white;
+}
+header #nav-bar a:hover{
+    color: #0E35C8 !important;
+}
+
+header #nav-bar a{
+    position: relative;
+}
+
+
+.button{
+    background:linear-gradient(#4769F9,#0E35C8) ;
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    border-radius: 50px;
+    
+} 
+
+.sticky{
+    position: fixed;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0px 0px 10px 10px #011653;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    
+}
+
+.sticky a{
+    color: #011653;
+
+}
+.sticky .button{
+    color: white;
+    background: #011653;
+    box-shadow: 0px 0px 2px 5px #ccc;
+}
+.icon{
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+}
+#about-company{
+    background: linear-gradient(to bottom right,#28416B,#0C133E,#02091E 80%);
+    
+
+}
+
+/* #about-company #overlay h1{
+    transition: 1s;
+}
+#about-company #overlay:hover{
+    cursor: default;
+}
+#about-company #overlay:hover h1{
+    color: #0E35C8;
+    transform: translateY(10px);
+} */
+#about-company #overlay{
+    top: -10%;
+    left:50%;
+    height: 200px;
+    border-radius: 15px;
+    overflow: hidden;
+    animation: moveUp 6s linear infinite;
+    
+}
+/* Overlay Animation */
+@keyframes moveUp {
+    0%{
+        top: -30px;
+    }
+    50%{
+        top: 15px;
+    }
+    100%{
+        top: -30px;
+    }
+}
+.small-heading{
+    color: #ccc;
+}
+#explore-services{
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(./Img/pexels-pixabay-267507.jpg);
+}
+#explore-services .card-explore{
+    
+    transition: 1s;
+}
+#explore-services .card-explore:not(.card-explore:last-child){
+    box-shadow:0 .5rem 1rem rgba(0,0,0,.8)!important;
+}
+#explore-services .card-explore:not(.card-explore:last-child):hover{
+    transform: translateY(-10px);
+    
+}
+#explore-services .card-explore h1 i{
+    font-size: 3rem;
+    color: #0E35C8;
+}
+#explore-services .card-explore h6{
+    font-size: 1.2rem;
+
+}
+#explore-services .card-explore .heading{
+    font-size: 1.5rem;
+    color: #011653;
+}
+#explore-services .card-explore .button{
+    border-radius: 5px;
+    
+}
+
+.boxes{
+    
+    border: 2px solid #1b264b;
+    border-radius: 10px;
+    font-family: var(--font);
+    background-color: #14214B;
+    position: relative;
+    transform: translateY(0px);
+    transition: 1s;
+    -webkit-transition: 1s;
+    -o-transition: 1s;
+}
+#what-client-say {
+    background: linear-gradient(to top right,#28416B,#0C133E,#02091E 80%);
+}
+#what-client-say .boxes > div:nth-child(1){
+    display: grid;
+    justify-items: center;
+
+}
+#what-client-say .icon-con{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    
+ 
+    background-color: #0E35C8;
+   
+}
+
+#what-client-say .name{
+    font-size: 2rem;
+    
+}
+#what-client-say .occupation{
+    font-style: italic;
+    color: #0E35C8;
+}
+#what-client-say .boxes{
+    transition: .8s ;
+}
+#what-client-say  p{
+   
+    line-height: 1.5rem;
+    font-size: 1.1rem;
+    color: #ccc;
+}
+
+/* Services.html */
+#our-services{
+    background: linear-gradient(to bottom right,#28416B,#0C133E,#02091E 80%);
+}
+
+#our-services .img-con{
+    height: 250px;
+} 
+
+#our-services .img-con .img-overlay img{
+    height: 100%;
+    width: 100%;
+    transform: rotate(10deg);
+    border-radius: 10px;
+    border: 3px solid white;
+    object-fit: cover;
+
+   
+}
+#our-services .img-con .img-overlay{
+    height: 100%;
+    background-color: #0E35C8;
+    transform: rotate(-10deg);
+    position: relative;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 10px #011653;
+}
+#our-services .text-left{
+    text-align: left;
+    
+    
+}
+
+#our-services .color-span{
+    color: #0E35C8;
+}
+
+#our-services .paragraph{
+    font-size: .9rem;
+    color: #ccc;
+}
+#our-services .button{
+    font-size: .9rem;
+}
+/* Cloud Services */
+#show-tab a{
+    transition: .6s;
+}
+ .animate{
+    animation: animater  2s;
+}
+footer{
+    background-color: #02091E;
+  
+}
+footer .li-head{
+    font-size: 1.4rem;
+    color: white;
+}
+
+footer nav {
+    border-bottom:.3px solid rgba(204, 204, 204, 0.132);
+   
+}
+footer li:not(li.li-head),footer li:not(li.li-head) a{
+    margin: 20px 0px;
+    font-size: .9rem;
+    color: #28416B;
+    position: relative;
+}
+footer li:not(li.li-head) a:hover{
+    text-shadow: 0px 0px 10px  #0E35C8;
+}
+footer ul:nth-child(1) li:not(li.li-head) a::before{
+    content: "";
+    position: absolute;
+   
+    width: 0%;
+    height: 0%;
+    top: 120%;
+    left: 0;
+    border-bottom: .2px solid #28416B ;
+    
+    transition: .5s;
+}
+footer ul:nth-child(1) li:not(li.li-head) a:hover::before{
+    width: 100%;
+}
+footer .icon{
+  
+    border: solid #28416B .1px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: .8rem;
+    color: #28416B;
+    transition: 1s;
+    
+}
+footer .icon:hover{
+    background-color: #0E35C8;
+    color: white;
+    border: solid #0E35C8 .1px;
+    box-shadow: 0px 0px 10px 5px #011653;
+    transform: rotate(-360deg);
+}
+
+::-webkit-scrollbar{
+    width: 8px;
+    background:#02091E ;
+    
+}
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(#3958E1,#3958E1);
+    border-radius: 20px;
+    
+}
+
+/* Animation */
+@keyframes animater {
+    from{
+        opacity: 0;
+
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@media screen and (min-width:579px) and (max-width:992px){
+    #what-client-say .name{
+        font-size: 1rem;
+    }
+    #what-client-say  p{
+        font-size: .8rem;
+    }
+    #what-client-say .occupation{
+        font-size: .9rem;
+    }
+}
+
+
+
+@media screen and (max-width:578px) {
+    #what-client-say .name{
+        font-size: 1rem;
+    }
+    #what-client-say  p{
+        font-size: .8rem;
+    }
+    #what-client-say .occupation{
+        font-size: .9rem;
+    }
+}
