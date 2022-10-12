@@ -10,6 +10,89 @@ li {
     list-style: none;
 }
 
+/* Loader */
+
+#loader{
+    color: white;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: var(--font);
+    
+}
+#loader #circle{
+    font-size: 2rem;
+    animation: rotateLoader 1s infinite;
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#loader  h1{
+    color: #0E35C8;
+    
+}
+.removeLoader{
+   animation: fadeOut 2s  forwards;
+}
+.hideScroll{
+    overflow-y: hidden;
+}
+
+/* Loader Animation */
+@keyframes fadeOut {
+    from{
+      /* opacity: 1; */
+      transform: translateY(0%);
+    }  
+    to{
+      /* opacity: 0;   */
+      transform: translateY(-100%);
+    }  
+}
+
+/* Loader    Ends*/
+/* Intro animation for header text and image */
+#fadeup{
+    animation: fadeUp 2s;
+}
+#fadeleft{
+    animation: fadeLeft 2.3s;
+}
+@keyframes fadeUp{
+    from{
+        opacity: .1;
+        filter: blur(3px);
+        transform: translateY(30%);
+    }
+    to{
+        opacity: 1;
+        filter: blur(0px);
+        transform: translateY(0%);
+    }
+} 
+
+@keyframes fadeLeft{
+    from{
+        opacity: 0;
+       
+        transform: translateX(10%);
+    }
+    to{
+        opacity: 1;
+        
+        transform: translateX(0%);
+    }
+} 
+
 header {
     height: 100%;
     width: 100%;
