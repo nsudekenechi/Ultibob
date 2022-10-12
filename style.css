@@ -166,20 +166,11 @@ header nav > ul > li:first-child a{
     display: flex;
     align-items: center;
     border-radius: 50px;
-    display: inline;
 } 
 header nav > ul > li:last-child a i,header nav > ul > li:first-child a i,footer nav > ul > li:first-child a i{
     margin-right: 5px;
 }
-header > section{
-    
-    padding:90px;
-   
-    font-family: var(--font);
-    display:grid;
-    grid-template-columns: auto auto;
-    justify-content: space-between;
-}
+
 header > section #text-1{
     font-size: 1.8rem;
     text-transform: capitalize;
@@ -490,7 +481,22 @@ header > section h1{
     color: #0E35C8;
 }
 #section-2 #div-2 .boxes{
-    transition: .8s ;
+    overflow: hidden;
+
+}
+.slidetext{
+    animation: slideText 1s ease-in;
+}
+/* Creating ANimation  */
+@keyframes slideText {
+    from{
+        opacity: 0;
+        transform: translateX(0%);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(-100%);
+    }
 }
 #section-2 #div-2  p{
     margin: 20px 0px;
@@ -832,8 +838,7 @@ footer #nav-2 > ul > ul:nth-child(2) li a:hover{
 }
 
 #section-2 #div-2 .name{
-    font-size: 1.3rem;
-   
+    font-weight: bold;
 }
 #section-2 #div-2 .occupation{
   
