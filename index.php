@@ -13,7 +13,7 @@ require_once("./includes/header.php");
 
         <div id="div-2" class="mb-5 py-5">
             <div class="text-center text-white" id="writeup" data-aos="fade-up" data-aos-duration="4000">
-                <p class="text-1" >Why Ultiblob?</p>
+                <p class="text-1">Why Ultiblob?</p>
                 <h1 class="h1-textshadow my-3">We manage your IT <br>so you can focus on your business</h1>
                 <p class="text-2">We are a technology driven company that provides managed IT services <br>in a
                     unique manner to guide organizations through their digital transformation journey</p>
@@ -56,9 +56,13 @@ require_once("./includes/header.php");
                     </div>
                 </div>
             </div>
-            <a href="./contactus.php" class="button text-white" data-aos="fade-up" data-aos-duration="4000">Start a Project</a>
+            <a href="./contactus.php" class="button text-white" data-aos="fade-up" data-aos-duration="4000">Start a
+                Project</a>
         </div>
-        <iframe data-aos="fade-up" data-aos-duration="4000" class="col-12" height="475" src="https://www.youtube.com/embed/wQIwMDI5kOM" title="Learn how to reduce your IT spend" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe data-aos="fade-up" data-aos-duration="4000" class="col-12" height="475"
+            src="https://www.youtube.com/embed/wQIwMDI5kOM" title="Learn how to reduce your IT spend" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
 
         <?php
 
@@ -80,31 +84,35 @@ require_once("./includes/header.php");
                 $orderText = "order-md-1";
             }
         ?>
-            <div class="row gap-md-5 gap-lg-0 align-items-center py-5 px-3 px-md-2 px-lg-0">
-                <div class="col-12 col-md-6 col-lg-6 my-5 <?= $orderImage; ?>">
-                    <div class="img-con col-12 col-lg-7 " data-aos="fade-right" data-aos-duration="4000">
-                        <div class="img-overlay p-0 ">
-                            <img src="./Img/<?= $image; ?>" alt="" class="img-fluid ">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-5 col-lg-6 <?= $orderText; ?>">
-                    <div data-aos="fade-left" data-aos-duration="4000">
-                        <h3 class="text-left  col-6 text-white">
-                            <span class="color-span"><?= $firstWord; ?></span> <?= $remainingWords; ?>
-                        </h3>
-                        <p class="paragraph  my-3"><?= $subtitle; ?></p>
-                        <a href="./services.php?service=<?= $title; ?>" class="rounded-pill py-2 px-4  col-12 col-md-6 col-lg-3  text-white text-center d-block button my-4">Learn
-                            more</a></a>
+        <div class="row gap-md-5 gap-lg-0 align-items-center py-5 px-3 px-md-2 px-lg-0">
+            <div class="col-12 col-md-6 col-lg-6 my-5 <?= $orderImage; ?>">
+                <div class="img-con col-12 col-lg-7 " data-aos="fade-right" data-aos-duration="4000">
+                    <div class="img-overlay p-0 ">
+                        <img src="./Img/<?= $image; ?>" alt="" class="img-fluid ">
                     </div>
                 </div>
             </div>
+            <div class="col-12 col-md-5 col-lg-6 <?= $orderText; ?>">
+                <div data-aos="fade-left" data-aos-duration="4000">
+                    <h3 class="text-left  col-6 text-white">
+                        <span class="color-span"><?= $firstWord; ?></span> <?= $remainingWords; ?>
+                    </h3>
+                    <p class="paragraph  my-3"><?= $subtitle; ?></p>
+                    <a href="./services.php?service=<?= $title; ?>"
+                        class="rounded-pill py-2 px-4  col-12 col-md-6 col-lg-3  text-white text-center d-block button my-4">Learn
+                        more</a></a>
+                </div>
+            </div>
+        </div>
         <?php
         }
 
         ?>
-        <div class="row gap-md-5 gap-lg-0 align-items-center position-relative py-5 px-3 px-md-2 px-lg-0 justify-content-center">
-            <a href="./services.php" class="rounded-pills py-3 px-4  col-12 col-md-6 col-lg-3  text-white text-center fs-5 d-block button my-4 ">View More</a>
+        <div
+            class="row gap-md-5 gap-lg-0 align-items-center position-relative py-5 px-3 px-md-2 px-lg-0 justify-content-center">
+            <a href="./services.php"
+                class="rounded-pills py-3 px-4  col-12 col-md-6 col-lg-3  text-white text-center fs-5 d-block button my-4 ">View
+                More</a>
         </div>
     </div>
 
@@ -124,10 +132,12 @@ require_once("./includes/header.php");
             </div>
 
             <div id="div-2" class="col-12 col-md-6">
-                <div class="boxes p-3 p-md-5 py-md-3 text-center overflow-hidden" id="boxes" data-aos="fade-left" data-aos-duration="4000">
+                <div class="boxes p-3 p-md-5 py-md-3 text-center overflow-hidden" id="boxes" data-aos="fade-left"
+                    data-aos-duration="4000">
                     <div id="testimonialCon">
                         <div class="d-flex flex-column">
-                            <span class="icon-con rounded-circle align-self-center p-md-3 d-flex justify-content-center align-items-center">
+                            <span
+                                class="icon-con rounded-circle align-self-center p-md-3 d-flex justify-content-center align-items-center">
                                 <i class="entypo-icon-users"></i>
                             </span>
                             <h3 class="name mt-3 fs-1 fw-bold">John Palmer</h3>
@@ -153,99 +163,79 @@ require_once("./includes/header.php");
 require_once("./includes/footer.php");
 ?>
 <script>
-    const loader = document.querySelector("#loader");
-    let text = "ltiblob.com".split("");
-    window.onload = function() {
+const loader = document.querySelector("#loader");
+let text = "ltiblob.com".split("");
+window.onload = function() {
 
-        let interval = setInterval(() => {
+    let interval = setInterval(() => {
 
-            if (text.length > 0) {
+        if (text.length > 0) {
 
-                if (loader.querySelector("h1") != null) {
-                    loader.querySelector("h1").innerHTML += text.shift();
-                } else {
-                    clearInterval(interval)
-                }
+            if (loader.querySelector("h1") != null) {
+                loader.querySelector("h1").innerHTML += text.shift();
             } else {
-                loader.classList.add("removeLoader")
                 clearInterval(interval)
             }
-        }, 100)
+        } else {
+            loader.classList.add("removeLoader")
+            clearInterval(interval)
+        }
+    }, 100)
 
-        setTimeout(() => {
+    setTimeout(() => {
 
-            headerText.id = "fadeup";
-            headerImg.id = "fadeleft";
+        headerText.id = "fadeup";
+        headerImg.id = "fadeleft";
 
-        }, 1000)
-        setTimeout(() => {
-            document.body.classList.remove("hideScroll");
-        }, 3000)
+    }, 1000)
+    setTimeout(() => {
+        document.body.classList.remove("hideScroll");
+    }, 3000)
+}
+
+// For Sliders
+const testimonalContents = {
+    name: ["John Palmer", "Judge O.", "Valentine Ozala", "Elizabeth N."],
+    occupation: ["Sales Managing Director | Merge IT", "C.E.O | Ruzoya LLC",
+        "IT Director | Weststar Associates", "Director | Norbeth Hotels"
+    ],
+    comments: [
+        `Ultiblob is a trusted implementation partner with multiple successful workload migration projects in the Azure and Microsoft 365 ecosystem. They are our one stop shop for Microsoft Certified Resources and Expertise.`,
+
+        `For all of our technical concerns and request, Ultiblob is our go to partner. They have proven expertise within the Microsoft Azure cloud as well as other cutting edge technologies. Their Windows 365 and Azure Virtual Desktop Experts assisted us on our journey to simplify our work from home requirements.`,
+
+        `Location was never an issue for this organization providing us services to support our Hyper-V infrastructure and Azure Cloud Environment. They have been the quickest to respond to technical support issues up to resolution. I recommend.`,
+
+        `Ultiblob has been our trusted partner for years and counting providing technical advisory services, IT procurement, Implementation Services and Remote management of our IT infrastructure. We love to work with theh best.`
+    ]
+}
+
+const testimonialName = document.querySelector("#boxes .name");
+const testimonialOccupation = document.querySelector("#boxes .occupation");
+const testimonialContent = document.querySelector("#boxes #comment");
+
+
+let id = 0;
+let testimonialCon = document.querySelector("#testimonialCon");
+setInterval(() => {
+    id++;
+    if (id >= testimonalContents.comments.length) {
+        id = 0;
     }
-
-    // For Sliders
-    const testimonalContents = {
-                name: ["John Palmer", "Judge O.", "Valentine Ozala", "Elizabeth N."],
-                occupation: ["Sales Managing Director | Merge IT", "C.E.O | Ruzoya LLC", 
-                "IT Director | Weststar Associates", "Director | Norbeth Hotels"],
-                comments: [
-                    `Ultiblob is a trusted implementation partner with multiple successful workload migration projects in the Azure and Microsoft 365 ecosystem. They are our one stop shop for Microsoft Certified Resources and Expertise.`,
-
-                    `For all of our technical concerns and request, Ultiblob is our go to partner. They have proven expertise within the Microsoft Azure cloud as well as other cutting edge technologies. Their Windows 365 and Azure Virtual Desktop Experts assisted us on our journey to simplify our work from home requirements.`,
-
-                    `Location was never an issue for this organization providing us services to support our Hyper-V infrastructure and Azure Cloud Environment. They have been the quickest to respond to technical support issues up to resolution. I recommend.`,
-
-                    `Ultiblob has been our trusted partner for years and counting providing technical advisory services, IT procurement, Implementation Services and Remote management of our IT infrastructure. We love to work with theh best.`
-                ]
-            }
-
-            const testimonialName = document.querySelector("#boxes .name");
-            const testimonialOccupation = document.querySelector("#boxes .occupation");
-            const testimonialContent = document.querySelector("#boxes #comment");
+    testimonialCon.classList.add("slidetext");
+    testimonialName.innerHTML = testimonalContents.name[id];
+    testimonialOccupation.innerHTML = testimonalContents.occupation[id];
+    testimonialContent.innerHTML = testimonalContents.comments[id];
 
 
-            let id = 0;
-            let testimonialCon = document.querySelector("#testimonialCon");
-            setInterval(() => {
-                id++;
-                if (id >= testimonalContents.comments.length) {
-                    id = 0;
-                }
-                testimonialCon.classList.add("slidetext");
-                testimonialName.innerHTML = testimonalContents.name[id];
-                testimonialOccupation.innerHTML = testimonalContents.occupation[id];
-                testimonialContent.innerHTML = testimonalContents.comments[id];
+}, 5000)
 
-
-            }, 5000)
-
-            setInterval(() => {
-                testimonialCon.classList.remove("slidetext");
-            }, 6000)
+setInterval(() => {
+    testimonialCon.classList.remove("slidetext");
+}, 6000)
 </script>
 
-<div id="fb-root"></div>
-    <script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          xfbml            : true,
-          version          : 'v10.0'
-        });
-      };
 
-      (function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
-
-    <!-- Your Chat Plugin code -->
-    <div class="fb-customerchat"
-      attribution="setup_tool"
-      page_id="707644306531247">
-    </div>
 </body>
 
 </html>

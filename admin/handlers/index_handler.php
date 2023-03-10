@@ -32,4 +32,4 @@ if(isset($_POST["log_in"])){
     }
 
     header("Location:../dashboard.php?alert=login_s");
-    }
+}

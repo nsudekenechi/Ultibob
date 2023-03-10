@@ -8,7 +8,56 @@ if ($adminType != "High") {
 ?>
 <div id="content" class="main-content">
 
+    <?php
+        if(isset($_GET["edit_admin"])){
+            $id = $_GET["edit_admin"];
+            $query="SELECT * FROM login WHERE admin_id='$id'";
+            $result=mysqli_query($conn,$query);
+            $row=mysqli_fetch_assoc($result);
+            ?>
+    <form action="./handlers/edit_handler.php" method="POST" enctype="multipart/form-data">
 
+        <div class="px-3 py-5">
+            <h5>Edit an admin</h5>
+            <div class="row my-4">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6 ">
+                    <h6 class="my-3">Admin Email</h6>
+                    <input type="text" name="admin_email" required class="form-control" placeholder="Enter Email..."
+                        id="" value="<?=$row["admin_email"];?>">
+
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6 ">
+                    <h6 class="my-3">Admin Email</h6>
+                    <select name="admin_type" class="form-control">
+                        <?php 
+                            if($row["admin_type"]=="Low"){
+                                ?>
+                        <option value="Low">Low</option>
+                        <option value="High">High</option>
+                        <?php
+                            }else{
+                                ?>
+                        <option value="High">High</option>
+
+                        <option value="Low">Low</option>
+                        <?php
+                            }
+                        ?>
+
+                    </select>
+
+                </div>
+            </div>
+            <div class="field-wrapper ">
+                <button type="submit" class="btn btn-primary " value="" name="edit_admin">Edit Admin</button>
+            </div>
+        </div>
+
+        <input type="text" hidden value="<?=$id;?>" name="id">
+    </form>
+    <?php
+        }else{
+            ?>
     <form action="./handlers/add_handler.php" method="POST" enctype="multipart/form-data">
 
         <div class="px-3 py-5">
@@ -16,7 +65,16 @@ if ($adminType != "High") {
             <div class="row my-4">
                 <div class="col-12 col-sm-12 col-md-6 col-lg-6 ">
                     <h6 class="my-3">Admin Email</h6>
-                    <input type="text" name="admin_email" required class="form-control" placeholder="Enter Email..." id="">
+                    <input type="text" name="admin_email" required class="form-control" placeholder="Enter Email..."
+                        id="">
+
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6 ">
+                    <h6 class="my-3">Admin Email</h6>
+                    <select name="admin_level" class="form-control">
+                        <option value="Low">Low</option>
+                        <option value="High">High</option>
+                    </select>
 
                 </div>
             </div>
@@ -27,7 +85,6 @@ if ($adminType != "High") {
 
 
     </form>
-
 
     <div class="layout-px-spacing">
         <div class="row" id="cancel-row">
@@ -42,7 +99,7 @@ if ($adminType != "High") {
 
                                 <th>Admin Username</th>
                                 <th>Admin Email </th>
-                                 <th>Admin Type</th>
+                                <th>Admin Type</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -55,58 +112,67 @@ if ($adminType != "High") {
                                 while ($row = mysqli_fetch_assoc($result)) {
                                     $i = 0;
                             ?>
-                                    <tr>
-                                        <td class="checkbox-column"> 1 </td>
-                                        <input type="text" hidden class="admin_id" value="<?= $row["admin_id"]; ?>">
+                            <tr>
+                                <td class="checkbox-column"> 1 </td>
+                                <input type="text" hidden class="admin_id" value="<?= $row["admin_id"]; ?>">
 
-                                        <td>
-                                            <div class="d-flex">
-                                                <p class="align-self-center mb-0 user-name"> <?= $row["admin_username"]; ?></p>
-                                            </div>
-                                        </td>
+                                <td>
+                                    <div class="d-flex">
+                                        <p class="align-self-center mb-0 user-name"> <?= $row["admin_username"]; ?></p>
+                                    </div>
+                                </td>
 
-                                        <td>
-                                            <div class="d-flex">
+                                <td>
+                                    <div class="d-flex">
 
-                                                <p class="align-self-center mb-0 user-name"> <?= $row["admin_email"]; ?></p>
-                                            </div>
-                                        </td>
-
-                                       
-                                        <td>
-                                            <div class="d-flex">
-
-                                                <p class="align-self-center mb-0 user-name"> <?= $row["admin_type"]; ?></p>
-                                            </div>
-                                        </td>
+                                        <p class="align-self-center mb-0 user-name"> <?= $row["admin_email"]; ?></p>
+                                    </div>
+                                </td>
 
 
+                                <td>
+                                    <div class="d-flex">
+
+                                        <p class="align-self-center mb-0 user-name"> <?= $row["admin_type"]; ?></p>
+                                    </div>
+                                </td>
 
 
-                                        <td>
-                                            <div class="dropdown">
-                                                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal">
-                                                        <circle cx="12" cy="12" r="1"></circle>
-                                                        <circle cx="19" cy="12" r="1"></circle>
-                                                        <circle cx="5" cy="12" r="1"></circle>
-                                                    </svg>
-                                                </a>
 
 
-                                                <div class="dropdown-menu mt-5" aria-labelledby="dropdownMenuLink2">
+                                <td style="display:flex; gap:30px;">
+                                    <a class="text-danger delete_admin"
+                                        href="handlers/delete_handler.php?delete_admin=<?=$row['admin_id'];?>"
+                                        title="Delete">
+                                        <i class=" bi-trash"></i>
+                                    </a>
 
-                                                    <a class="dropdown-item action-delete delete_admin" href="handlers/delete_handler.php?delete_admin=<?=$row['admin_id'];?>"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash">
-                                                            <polyline points="3 6 5 6 21 6"></polyline>
-                                                            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-                                                        </svg>Delete</a>
-                                                </div>
+                                    <a class="text-success " href="./add_admin.php?edit_admin=<?=$row['admin_id'];?>"
+                                        title="Edit">
+                                        <i class="bi-pen"></i>
+                                    </a>
 
-                                            </div>
-                                        </td>
+                                    <a class="suspend" title="<?=$row["suspend"]== "false"? 'Suspend':'UnSuspend'?>"
+                                        data-id="<?=$row['admin_id'];?>">
+                                        <?php
+                                            if($row["suspend"]== "false"){
+                                                ?>
+                                        <i class="bi-eye-slash"></i>
+
+                                        <?php
+                                            }else{
+                                                ?>
+                                        <i class="bi-eye"></i>
+
+                                        <?php
+                                            }
+                                        ?>
+                                    </a>
+
+                                </td>
 
 
-                                    </tr>
+                            </tr>
                             <?php
 
                                 }
@@ -124,6 +190,12 @@ if ($adminType != "High") {
 
 
     <!--  END CONTENT AREA  -->
+    <?php
+        }
+    ?>
+
+
+
 
 </div>
 
@@ -131,16 +203,38 @@ if ($adminType != "High") {
 require_once("./includes/footer.php");
 ?>
 <script>
-    const deleteAdmins = document.querySelectorAll(".delete_admin");
-    const adminId = document.querySelectorAll(".admin_id");
-    deleteAdmins.forEach((deleteAdmin, index) => {
-        deleteAdmin.onclick = function() {
+const deleteAdmins = document.querySelectorAll(".delete_admin");
+const adminId = document.querySelectorAll(".admin_id");
+deleteAdmins.forEach((deleteAdmin, index) => {
+    deleteAdmin.onclick = function() {
 
-            fetch(`./handlers/delete_handler.php?deleteall_admin=${adminId[index].value}`).then(e => e.text()).then(e => {
+        fetch(`./handlers/delete_handler.php?deleteall_admin=${adminId[index].value}`).then(e => e.text())
+            .then(e => {
                 if (e == "true") {
                     swal("Deleted", "", "success")
                 }
             })
-        }
-    })
+    }
+})
+
+const makeRequest = async (id, suspend) => {
+    let req = await fetch(`./handlers/edit_handler.php?suspend_admin=${id}`);
+    let res = await req.text();
+    let title = "";
+    if (res === "false") {
+        title = "Suspend";
+        suspend.querySelector("i").classList.replace("bi-eye", "bi-eye-slash")
+    } else {
+        title = "UnSuspend";
+        suspend.querySelector("i").classList.replace("bi-eye-slash", "bi-eye")
+    }
+    suspend.setAttribute("title", title);
+}
+const suspends = document.querySelectorAll(".suspend");
+suspends.forEach(suspend => {
+    suspend.onclick = () => {
+        makeRequest(suspend.dataset.id, suspend)
+
+    }
+})
 </script>

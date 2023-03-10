@@ -10,8 +10,10 @@ if (!isset($_SESSION["username"])) {
     $username = $_SESSION["username"];
     $query = "SELECT * FROM login WHERE admin_username='$username' || admin_email='$username'";
     $result = mysqli_query($conn, $query);
-    if (mysqli_num_rows($result) > 0) {
-        $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+    $row= mysqli_fetch_assoc($result);
+    if($row["suspend"]=="true"){
+        header("Location:./index.php?suspended");
+    }else{
         $username = $row["admin_username"];
         $adminType = $row["admin_type"];
     }
@@ -26,7 +28,7 @@ if (!isset($_SESSION["username"])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
     <title>Admin Panel || <?= $title; ?> </title>
-    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="Img/favicon-removebg-preview.png" />
     <link href="assets/css/loader.css" rel="stylesheet" type="text/css" />
     <script src="assets/js/loader.js"></script>
 
@@ -57,7 +59,7 @@ if (!isset($_SESSION["username"])) {
     <link rel="stylesheet" type="text/css" href="plugins/table/datatable/dt-global_style.css">
     <link rel="stylesheet" type="text/css" href="assets/css/forms/theme-checkbox-radio.css">
     <link href="assets/css/apps/invoice-list.css" rel="stylesheet" type="text/css" />
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
 </head>
 

@@ -80,6 +80,7 @@
 <script>
 AOS.init()
 </script>
+
 <?php
     if ($title == "Home" || $title == "About Us") {
     ?>

@@ -23,6 +23,7 @@ $services = [
     "images" => ["pexels-cottonbro-6804581.jpg", "pexels-jopwell-2422293.jpg", "pexels-pixabay-267507.jpg", "pexels-josh-sorenson-1054397.jpg", "sales.jpg"]
 ];
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -48,10 +49,38 @@ $services = [
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Finlandica&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style1.css">
+    <script src="./admin/plugins/sweetalerts/sweetalert2.min.js"></script>
 
 </head>
 
 <body class="<?= $hide; ?>">
+
+    <?php
+        if(isset($_GET["mail"])){
+            if(isset($_GET["mail"])=="s"){
+                ?>
+    <script>
+    Swal.fire(
+        'Email Sent!',
+        "We'll get back to you shortly",
+        'success'
+    )
+    </script>
+    <?php
+            }else{
+                ?>
+    <script>
+    Swal.fire(
+        'Email Failed!',
+        "Please Try Again",
+        'error'
+    )
+    </script>
+    <?php
+            }
+        }
+    ?>
+
     <div id="" class="p-0" style="overflow-x: hidden;">
         <?php
         if ($title == "Home") {

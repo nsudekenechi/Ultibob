@@ -22,7 +22,8 @@ if (isset($_POST["create_blog"])) {
     $date = date("d M Y");
     $time = date("g:i A");
     $blog_date = json_encode([$date, $time]);
-
+    $blog_description=htmlspecialchars($_POST["blog_description"]);
+    
     if ($blog_image != false) {
         $query = "INSERT INTO `create_blog`( `blog_id`, `blog_title`, `blog_image`, `blog_description`, `blog_admin`, `blog_date`) VALUES ('$blog_id','$blog_name','$blog_image','$blog_description','$username','$blog_date')";
 
@@ -45,9 +46,9 @@ if (isset($_POST["add_admin"])) {
     $adminPassword = generateId(8);
     $adminId = generateId(6);
     $hashPassword = password_hash($adminPassword, PASSWORD_DEFAULT);
-    $adminType = "Low";
+    $adminType = $admin_level;
 
-    $query = "INSERT INTO `login`( `admin_id`, `admin_username`, `admin_email`, `admin_password`, `admin_type`) VALUES ('$adminId','$adminUsername','$admin_email','$hashPassword','Low')";
+    $query = "INSERT INTO `login`( `admin_id`, `admin_username`, `admin_email`, `admin_password`, `admin_type`,`suspend`) VALUES ('$adminId','$adminUsername','$admin_email','$hashPassword','$adminType','false')";
     $result = mysqli_query($conn, $query);
     $sendMail = sendmail($admin_email, $adminUsername, $adminPassword);
     if ($result && $sendMail) {
@@ -62,11 +63,11 @@ function sendmail($email, $adminUsername, $password)
 {
     $senderemail = "alabahmusic@gmail.com";
     $senderpassword = "vqfrqkykxfnxxqeb";
-    $senderFrom = "ultiblob";
-    $subject = "Admin at ultiblob blog";
+    $senderFrom = "Ultiblob";
+    $subject = "Admin at Ultiblob Blog";
 
     $body = file_get_contents("../emailtoadmin.html");
-    $body = str_replace(["(Heading)", "(SubHeading)", "{{username}}", "{{password}}", "{Footer Info}"], ["You were chosen as an admin at ultiblob Blog", "Here is your login details", $adminUsername, $password,  "Your can change the username and password later,please keep your password secret,ignore this if it doesn't concern you"], $body);
+    $body = str_replace(["{Username}", "{Password}", "{Footer Info}"], [ $adminUsername, $password,  "You can change the username and password later. Ignore this mail if it doesn't concern you"], $body);
 
 
     $mail = new PHPMailer(true);

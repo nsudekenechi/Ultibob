@@ -48,6 +48,14 @@ $pages = ceil($totalBlogs / $perPage);
     border: solid #0E35C8 .1px;
     box-shadow: 0px 0px 10px 5px #011653;
 }
+
+.paragraph * {
+    all: revert;
+}
+
+.paragraph a {
+    color: white;
+}
 </style>
 
 <?php
@@ -94,7 +102,8 @@ if (!isset($_GET["title"])) {
                         <?= $row["blog_title"]; ?>
                     </h3>
 
-                    <p class="paragraph  my-3"><?= substr($row["blog_description"], 0, 800) ?></p>
+                    <div class="paragraph  my-3"><?= substr(html_entity_decode($row["blog_description"]), 0, 800) ?>
+                    </div>
                     <div class="paragraph col-10 col-md-6 text-white d-flex align-items-center justify-content-between">
                         <div>
                             <i class="entypo-icon-user"></i>
@@ -169,7 +178,7 @@ if (!isset($_GET["title"])) {
     $result = mysqli_query($conn, $query);
     $row = mysqli_fetch_assoc($result);
     $image = $row["blog_image"];
-    $description = str_word_count($row["blog_description"]);
+    $description = str_word_count(html_entity_decode($row["blog_description"]));
     $wordInSeconds = 0.5;
     $readingTime = $wordInSeconds * $description;
     // echo $readingTime;
@@ -203,6 +212,10 @@ header {
 .description::first-line {
     font-size: 2rem;
 }
+
+.description * {
+    all: revert;
+}
 </style>
 
 <section id="our-services">
@@ -214,7 +227,7 @@ header {
         </div>
 
 
-        <p class="description"><?= $row["blog_description"]; ?></p>
+        <div class="description"><?= htmlspecialchars_decode($row["blog_description"]); ?></div>
         <input type="text" value="<?= $title; ?>" hidden id="blog_title">
     </div>
 </section>

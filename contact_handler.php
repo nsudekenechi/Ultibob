@@ -45,8 +45,8 @@ if(isset($_POST["Submit"])){
     $POST=filter_var_array($_POST,FILTER_SANITIZE_STRING);
     extract($POST);
     if(sendMail($name,$companyName,$emailAddress,$phoneNumber,$message)){
-        header("Location:./contactus.php");
+        header("Location:./contactus.php?mail=sent");
     }else{
-        header("Location:./index.php");
+        header("Location:./contactus.php?mail=fail");
     }
 }
