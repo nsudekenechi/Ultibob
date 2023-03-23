@@ -7,10 +7,10 @@ require_once("./includes/header.php");
 <!-- /Header Section -->
 
 <!-- Section1 -->
+
 <section id="section-1" class="position-relative">
     <div class="sun orange"></div>
     <div class="container text-white">
-
         <div id="div-2" class="mb-5 py-5">
             <div class="text-center text-white" id="writeup" data-aos="fade-up" data-aos-duration="4000">
                 <p class="text-1">Why Ultiblob?</p>

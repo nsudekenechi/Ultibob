@@ -39,6 +39,12 @@ $services = [
     <title>Ultiblob ||
         <?= $title; ?>
     </title>
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+/>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="./entypo/style.css">
     <link rel="stylesheet" href="./aos/aos.css">
     <link rel="stylesheet" href="./bootstrap-5.0.2-dist/css/bootstrap.min.css">
@@ -50,7 +56,9 @@ $services = [
     <link href="https://fonts.googleapis.com/css2?family=Finlandica&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style1.css">
     <script src="./admin/plugins/sweetalerts/sweetalert2.min.js"></script>
-
+    <style>
+        
+    </style>
 </head>
 
 <body class="<?= $hide; ?>">
@@ -82,6 +90,17 @@ $services = [
     ?>
 
     <div id="" class="p-0" style="overflow-x: hidden;">
+    <?php
+        if($title!="Home"){
+            ?>
+            <style>
+                header{
+                      background: linear-gradient(to bottom right, #28416b, #0c133e, #02091e 80%);
+}
+            </style>
+            <?php
+        }
+    ?>
         <?php
         if ($title == "Home") {
             ?>
@@ -102,6 +121,12 @@ $services = [
             <?php
             if ($title == "Home") {
                 ?>
+                <div class="m-0 p-0  w-100 h-100 left-0 position-absolute top-0" style="background-color:rgba(0,0,0,.8);z-index: -1;"></div>
+                <video src="./Img/bgVideo.mp4" class="m-0 p-0   left-0 position-absolute top-0" loop muted autoplay="" style="z-index: -2;background-color:black;" id="myVideo"></video>
+                
+                   <div >
+                   
+                   </div>
             <div class="sun orange d-none d-lg-block"></div>
 
             <?php
@@ -120,7 +145,7 @@ $services = [
                                 <li><a href="aboutus.php">About</a></li>
                                 <li><a href="./program.php">Programs</a></li>
                                 <li><a href="./services.php">Services</a></li>
-                                <li><a href="./blog.php">Blog</a></li>
+                                <li><a href="https://www.blog.ultiblob.com/blog">Blog</a></li>
                                 <li><a href="contactus.php">Contact Us</a></li>
                             </ul>
                             <li><a href="" class="button"><i class="entypo-icon-briefcase me-1"></i>Career</a></a></li>
@@ -170,7 +195,7 @@ $services = [
                                             class="fs-4 p-2 text-dark  d-block col-12">Programs</a></li>
                                     <li class="p-3"><a href="./services.php"
                                             class="fs-4 p-2 text-dark  d-block col-12">Services</a></li>
-                                    <li class="p-3"><a href="./blog.php"
+                                    <li class="p-3"><a href="https://www.blog.ultiblob.com/blog"
                                             class="fs-4 p-2 text-dark  d-block col-12">Blog</a></li>
                                     <li class="p-3"><a href="contactus.php"
                                             class="fs-4 p-2 text-dark  d-block col-12">Contact Us</a></li>
@@ -188,7 +213,9 @@ $services = [
                     ?>
                 <section class="py-5">
                     <div class="container ">
-                        <div class="row align-items-center px-3 px-md-0">
+                 
+                        <div class=" row align-items-center px-3 px-md-0">
+                     
                             <div id="headerText" class="col-12 col-md-6 ">
                                 <div>
                                     <p id="text-1" class=" m-0 p-0 ">Join the revolution</p>
@@ -211,8 +238,8 @@ $services = [
 
                             <div id="headerImg" class="col-12 col-md-6 d-none d-md-block">
                                 <div id="img-con" class="">
-                                    <img src="./Img/original-2614b1a5b17e13824c57fdef108bff95-removebg-preview.png"
-                                        alt="" class="animateLogo">
+                                    <!-- <img src="./Img/original-2614b1a5b17e13824c57fdef108bff95-removebg-preview.png"
+                                        alt="" class="animateLogo"> -->
                                 </div>
                             </div>
                         </div>

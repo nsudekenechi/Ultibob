@@ -3,79 +3,18 @@ $title = "Programs";
 require_once("./includes/header.php");
 ?>
 <style>
-.desc-first span {
-    font-size: 2rem;
-    color: #0e35c8;
-    font-family: "Poppins", "sans-serif";
-
-}
-
-.outgoing {
-    animation: slideOut 10s 2s infinite;
-
-}
-
-.incoming {
-    opacity: 0;
-    animation: slideIn 10s 2s infinite;
-}
-
-@keyframes slideOut {
-    0% {
-        transform: translateX(0%);
-
-        opacity: 1;
-
+    .swiper-slide img {
+        width: 70px;
+        height: 70px;
+        object-fit: contain;
     }
 
-    50% {
-        transform: translateX(-100%);
-        opacity: 0;
+    .desc-first span {
+        font-size: 2rem;
+        color: #0e35c8;
+        font-family: "Poppins", "sans-serif";
 
     }
-
-    75% {
-        transform: translateX(50%);
-        opacity: 0;
-
-    }
-
-    100% {
-        transform: translateX(0%);
-
-        opacity: 1;
-
-    }
-
-
-
-}
-
-
-
-@keyframes slideIn {
-    0% {
-        transform: translateX(0%);
-        opacity: 0;
-    }
-
-    50% {
-        transform: translateX(-95%);
-        opacity: 1;
-    }
-
-    75% {
-        transform: translateX(-150%);
-        opacity: 0;
-    }
-
-    100% {
-        transform: translateX(0%);
-        opacity: 0;
-    }
-}
-
-div {}
 </style>
 
 <section class="section prog-desc-container">
@@ -115,8 +54,35 @@ div {}
                 </div>
             </div>
         </div>
-        <div class="row my-5 overflow-hidden" id="">
-            <div class="col-6 row align-items-center gap-5 outgoing" id="">
+        <div class="swiper col-12 align-content-center mt-5" id="swiper">
+            <div class="swiper-wrapper d-flex align-content-center">
+                <div class="swiper-slide">
+                    <img src="./img/calix_logo.png" alt="" class="">
+                </div>
+                <div class="swiper-slide ">
+                    <img src="./img/logo tiva (1).webp" alt="" class="">
+                </div>
+                <div class="swiper-slide ">
+                    <img src="./img/MergeIT.png" alt="" class="">
+                </div>
+                <div class="swiper-slide ">
+                    <img src="./img/MST-Logo.svg" alt="" class="">
+                </div>
+                <div class="swiper-slide ">
+                    <img src="./img/RPTG.gif" alt="" class="">
+                </div>
+                <div class="swiper-slide ">
+                    <img src="./img/Dell_Technologies_logo.svg.png" alt="" class="img-fluid">
+                </div>
+                <div class="swiper-slide ">
+                    <img src="./img/ruzoya.png" alt="" class="img-fluid">
+                </div>
+                <div class="swiper-slide ">
+                    <img src="./img/norbeth.png" alt="" class="img-fluid">
+                </div>
+            </div>
+
+            <!-- <div class="col-6 row align-items-center gap-5 " id="">
                 <div class="col-3">
                     <img src="./img/calix_logo.png" alt="" class="img-fluid">
                 </div>
@@ -128,7 +94,7 @@ div {}
                 </div>
             </div>
 
-            <div class="col-6 row align-items-center gap-5 incoming" id="">
+            <div class="col-6 row align-items-center gap-5 " id="">
                 <div class="col-3">
                     <img src="./img/MST-Logo.svg" alt="" class="img-fluid">
                 </div>
@@ -139,7 +105,7 @@ div {}
                     <img src="./img/Dell_Technologies_logo.svg.png" alt="" class="img-fluid">
                 </div>
 
-            </div>
+            </div> -->
 
 
         </div>
@@ -230,6 +196,38 @@ div {}
 
 </section>
 
+<script>
+    const swiper = new Swiper('.swiper', {
+        // Optional parameters
+        direction: 'horizontal',
+        loop: true,
+
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false
+        },
+        // Responsive breakpoints
+        breakpoints: {
+            // when window width is >= 320px
+            320: {
+                slidesPerView: 3,
+                spaceBetween: 20
+            },
+            // when window width is >= 480px
+            480: {
+                slidesPerView: 3,
+                spaceBetween: 30
+            },
+            // when window width is >= 640px
+            640: {
+                slidesPerView: 4,
+                spaceBetween: 40
+            },
+
+
+        }
+    });
+</script>
 <?php
 require_once("./includes/footer.php");
 ?>

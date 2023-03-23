@@ -23,11 +23,26 @@
     <!-- END GLOBAL MANDATORY STYLES -->
     <link rel="stylesheet" type="text/css" href="assets/css/forms/theme-checkbox-radio.css">
     <link rel="stylesheet" type="text/css" href="assets/css/forms/switches.css">
+    <script src="./plugins/sweetalerts/sweetalert2.min.js"></script>
+
 </head>
 
 <body class="form">
 
+    <?php
+        if(isset($_GET["suspended"])){
+            ?>
+    <script>
+    Swal.fire(
+        'Your account have been suspended',
+        "Please Contact Admin",
+        'error'
+    )
+    </script>
 
+    <?php
+        }
+    ?>
     <div class="form-container">
         <div class="form-form">
             <div class="form-form-wrap">
