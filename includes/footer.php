@@ -33,14 +33,18 @@
 
             <ul class="col-12 col-md-6 col-lg-3">
                 <li class="my-3 li-head">Contact</li>
-                <li><a href="https://goo.gl/maps/e7tYZcBsbNHsQx4c7"><i class="entypo-icon-location me-2"></i>
+                <li><a href="https://goo.gl/maps/e7tYZcBsbNHsQx4c7" target="_blank"><i
+                            class="entypo-icon-location me-2"></i>
                         254 CHAPMAN RD, STE 208
                         NEWARK, DE 19702</a></li>
-                <li><a href="mailto:info@ultiblob.com"><i class="entypo-icon-paper-plane me-2"></i>info@ultiblob.com</a>
+                <li><a href="mailto:info@ultiblob.com" target="_blank"><i
+                            class="entypo-icon-paper-plane me-2"></i>info@ultiblob.com</a>
                 </li>
-                <li><a href="mailto:support@ultiblob.com"><i class="entypo-icon-help me-2"></i>support@ultiblob.com</a>
+                <li><a href="mailto:support@ultiblob.com"><i class="entypo-icon-help me-2"
+                            target="_blank"></i>support@ultiblob.com</a>
                 </li>
-                <li><a href="tel:+17208260460"><i class="entypo-icon-phone me-2"></i> +17208260460</a></li>
+                <li><a href="tel:+17208260460" target="_blank"><i class="entypo-icon-phone me-2"></i> +17208260460</a>
+                </li>
 
             </ul>
 
@@ -48,7 +52,8 @@
 
         <ul class="row text-lg-start text-sm-center text-center pb-0 align-items-md-center">
             <ul class="col-12 col-md-4 col-lg-6 ">
-                <li><a>&copy; <?= date("Y"); ?> ultiblob. All rights reserved</a></li>
+                <li><a>&copy; <?= date("Y"); ?>
+                        ultiblob. All rights reserved</a></li>
 
             </ul>
 
@@ -78,57 +83,57 @@
 <script src="./main.js"></script>
 <script src="./aos/aos.js"></script>
 <script>
-AOS.init()
+    AOS.init()
 </script>
 
 <?php
     if ($title == "Home" || $title == "About Us") {
-    ?>
+        ?>
 <!-- Sliders For Testimonial section on About us and home -->
 <script>
-const testimonalContents = {
-    name: ["Maikudi Shoaga", "Okezie Franklin", "Udeobi Jane", "Ebere Nsude"],
-    occupation: ["MD | C.E.O - Peoples Day Services", "MD | C.E.O - ultiblob", "MD | C.E.O - Norbeth Hotels",
-        "MD | C.E.O - Frantine"
-    ],
-    comments: [
-        `Ultiblob transformed the way our employees work today. They have been our trusted advisors torecommend and purchase all of ourhardware and software, manage all of our infrastructure and till date there has been no need for an internal IT staff`,
+    const testimonalContents = {
+        name: ["Maikudi Shoaga", "Okezie Franklin", "Udeobi Jane", "Ebere Nsude"],
+        occupation: ["MD | C.E.O - Peoples Day Services", "MD | C.E.O - ultiblob", "MD | C.E.O - Norbeth Hotels",
+            "MD | C.E.O - Frantine"
+        ],
+        comments: [
+            `Ultiblob transformed the way our employees work today. They have been our trusted advisors torecommend and purchase all of ourhardware and software, manage all of our infrastructure and till date there has been no need for an internal IT staff`,
 
-        `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis maxime iure animi aliquam accusamus dicta minima nisi libero eligendi, nihil similique unde nemo hic, incidunt rerum? Blanditiis beatae repudiandae maxime.`,
+            `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis maxime iure animi aliquam accusamus dicta minima nisi libero eligendi, nihil similique unde nemo hic, incidunt rerum? Blanditiis beatae repudiandae maxime.`,
 
-        `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis maxime iure animi aliquam accusamus dicta minima nisi libero eligendi, nihil similique unde nemo hic, incidunt rerum? Blanditiis beatae repudiandae maxime.`,
+            `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis maxime iure animi aliquam accusamus dicta minima nisi libero eligendi, nihil similique unde nemo hic, incidunt rerum? Blanditiis beatae repudiandae maxime.`,
 
-        `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis maxime iure animi aliquam accusamus dicta minima nisi libero eligendi, nihil similique unde nemo hic, incidunt rerum? Blanditiis beatae repudiandae maxime.`
-    ]
-}
-
-const testimonialName = document.querySelector("#boxes .name");
-const testimonialOccupation = document.querySelector("#boxes .occupation");
-const testimonialContent = document.querySelector("#boxes #comment");
-
-
-let id = 0;
-let testimonialCon = document.querySelector("#testimonialCon");
-setInterval(() => {
-    id++;
-    if (id >= testimonalContents.comments.length) {
-        id = 0;
+            `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis maxime iure animi aliquam accusamus dicta minima nisi libero eligendi, nihil similique unde nemo hic, incidunt rerum? Blanditiis beatae repudiandae maxime.`
+        ]
     }
-    testimonialCon.classList.add("slidetext");
-    testimonialName.innerHTML = testimonalContents.name[id];
-    testimonialOccupation.innerHTML = testimonalContents.occupation[id];
-    testimonialContent.innerHTML = testimonalContents.comments[id];
+
+    const testimonialName = document.querySelector("#boxes .name");
+    const testimonialOccupation = document.querySelector("#boxes .occupation");
+    const testimonialContent = document.querySelector("#boxes #comment");
 
 
-}, 5000)
+    let id = 0;
+    let testimonialCon = document.querySelector("#testimonialCon");
+    setInterval(() => {
+        id++;
+        if (id >= testimonalContents.comments.length) {
+            id = 0;
+        }
+        testimonialCon.classList.add("slidetext");
+        testimonialName.innerHTML = testimonalContents.name[id];
+        testimonialOccupation.innerHTML = testimonalContents.occupation[id];
+        testimonialContent.innerHTML = testimonalContents.comments[id];
 
-setInterval(() => {
-    testimonialCon.classList.remove("slidetext");
-}, 6000)
+
+    }, 5000)
+
+    setInterval(() => {
+        testimonialCon.classList.remove("slidetext");
+    }, 6000)
 </script>
 <?php
     }
-    ?>
+                ?>
 </body>
 
 </html>

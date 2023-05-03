@@ -39,12 +39,9 @@ $services = [
     <title>Ultiblob ||
         <?= $title; ?>
     </title>
-    <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
-/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="./entypo/style.css">
     <link rel="stylesheet" href="./aos/aos.css">
     <link rel="stylesheet" href="./bootstrap-5.0.2-dist/css/bootstrap.min.css">
@@ -57,53 +54,53 @@ $services = [
     <link rel="stylesheet" href="./style1.css">
     <script src="./admin/plugins/sweetalerts/sweetalert2.min.js"></script>
     <style>
-        
+
     </style>
 </head>
 
 <body class="<?= $hide; ?>">
 
     <?php
-        if(isset($_GET["mail"])){
-            if(isset($_GET["mail"])=="s"){
+        if (isset($_GET["mail"])) {
+            if (isset($_GET["mail"])=="s") {
                 ?>
     <script>
-    Swal.fire(
-        'Email Sent!',
-        "We'll get back to you shortly",
-        'success'
-    )
+        Swal.fire(
+            'Email Sent!',
+            "We'll get back to you shortly",
+            'success'
+        )
     </script>
     <?php
-            }else{
+            } else {
                 ?>
     <script>
-    Swal.fire(
-        'Email Failed!',
-        "Please Try Again",
-        'error'
-    )
+        Swal.fire(
+            'Email Failed!',
+            "Please Try Again",
+            'error'
+        )
     </script>
     <?php
             }
         }
-    ?>
+?>
 
     <div id="" class="p-0" style="overflow-x: hidden;">
-    <?php
-        if($title!="Home"){
-            ?>
-            <style>
-                header{
-                      background: linear-gradient(to bottom right, #28416b, #0c133e, #02091e 80%);
-}
-            </style>
-            <?php
-        }
-    ?>
         <?php
-        if ($title == "Home") {
-            ?>
+    if ($title!="Home") {
+        ?>
+        <style>
+            header {
+                background: linear-gradient(to bottom right, #28416b, #0c133e, #02091e 80%);
+            }
+        </style>
+        <?php
+    }
+?>
+        <?php
+    if ($title == "Home") {
+        ?>
         <!-- Loader Section -->
         <div id="loader">
             <span id="circle">
@@ -113,26 +110,28 @@ $services = [
         </div>
         <!-- /Loader Section -->
         <?php
-        }
-        ?>
+    }
+?>
 
         <!-- HEader Section -->
         <header class="position-relative">
             <?php
-            if ($title == "Home") {
-                ?>
-                <div class="m-0 p-0  w-100 h-100 left-0 position-absolute top-0" style="background-color:rgba(0,0,0,.8);z-index: -1;"></div>
-                <video src="./Img/bgVideo.mp4" class="m-0 p-0   left-0 position-absolute top-0" loop muted autoplay="" style="z-index: -2;background-color:black;" id="myVideo"></video>
-                
-                   <div >
-                   
-                   </div>
+    if ($title == "Home") {
+        ?>
+            <div class="m-0 p-0  w-100 h-100 left-0 position-absolute top-0"
+                style="background-color:rgba(0,0,0,.8);z-index: -1;"></div>
+            <video src="./Img/bgVideo.mp4" class="m-0 p-0   left-0 position-absolute top-0" loop muted autoplay=""
+                style="z-index: -2;background-color:black;" id="myVideo"></video>
+
+            <div>
+
+            </div>
             <div class="sun orange d-none d-lg-block"></div>
 
             <?php
-            }
-            ?>
-            <div class="">
+    }
+?>
+            <div class="h-100 ">
                 <nav class="nav d-md-flex align-items-center  p-0 pb-0">
                     <!-- Desktop Nav -->
                     <div class="container d-none d-md-flex">
@@ -209,13 +208,13 @@ $services = [
                     </div>
                 </nav>
                 <?php
-                if ($title == "Home") {
-                    ?>
-                <section class="py-5">
-                    <div class="container ">
-                 
-                        <div class=" row align-items-center px-3 px-md-0">
-                     
+    if ($title == "Home") {
+        ?>
+                <section class="py-5 h-100 ">
+                    <div class="container h-100 ">
+
+                        <div class="h-100  row align-items-top py-md-5 px-3 px-md-0">
+
                             <div id="headerText" class="col-12 col-md-6 ">
                                 <div>
                                     <p id="text-1" class=" m-0 p-0 ">Join the revolution</p>
@@ -236,20 +235,14 @@ $services = [
                                 </div>
                             </div>
 
-                            <div id="headerImg" class="col-12 col-md-6 d-none d-md-block">
-                                <div id="img-con" class="">
-                                    <!-- <img src="./Img/original-2614b1a5b17e13824c57fdef108bff95-removebg-preview.png"
-                                        alt="" class="animateLogo"> -->
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                 </section>
                 <?php
-                } else {
-                    if (!isset($_GET["title"]) && !isset($_GET["service"])) {
-
-                        ?>
+    } else {
+        if (!isset($_GET["title"]) && !isset($_GET["service"])) {
+            ?>
                 <section class="py-5 text-center" data-aos="fade-up" data-aos-duration="4000">
                     <div class="container py-5 ">
                         <h1 class=" text-white">
@@ -268,19 +261,19 @@ $services = [
                     </div>
                 </section>
                 <?php
-                    } else {
-                        if (isset($_GET["title"])) {
-                            $title = str_replace("-", " ", $_GET["title"]);
-                            $query = "SELECT * FROM create_blog WHERE blog_title='$title'";
-                            $result = mysqli_query($conn, $query);
-                            $row = mysqli_fetch_assoc($result);
-                            $type = "Blog";
-                        } else {
-                            $title = $_GET["service"];
-                            $type = "Services";
-                        }
+        } else {
+            if (isset($_GET["title"])) {
+                $title = str_replace("-", " ", $_GET["title"]);
+                $query = "SELECT * FROM create_blog WHERE blog_title='$title'";
+                $result = mysqli_query($conn, $query);
+                $row = mysqli_fetch_assoc($result);
+                $type = "Blog";
+            } else {
+                $title = $_GET["service"];
+                $type = "Services";
+            }
 
-                        ?>
+            ?>
                 <section class="py-5 text-left">
                     <div class="container py-5 ">
                         <h1 class="fs-4 text-primary" data-aos="fade-up" data-aos-duration="4000">
@@ -293,8 +286,8 @@ $services = [
                             </h1>
                         </a>
                         <?php
-                                if (isset($_GET["title"])) {
-                                    ?>
+                    if (isset($_GET["title"])) {
+                        ?>
                         <div class="">
                             <div data-aos="fade-left" data-aos-duration="4000"
                                 class="paragraph col-4 text-white col-12 col-md-5 d-flex align-items-center justify-content-between">
@@ -329,12 +322,12 @@ $services = [
 
                         </div>
                         <?php
-                                } else {
-                                    ?>
+                    } else {
+                        ?>
                         <style>
-                        a:hover {
-                            color: white;
-                        }
+                            a:hover {
+                                color: white;
+                            }
                         </style>
                         <div class="">
                             <div data-aos="fade-left" data-aos-duration="4000"
@@ -347,14 +340,14 @@ $services = [
                             </div>
                         </div>
                         <?php
-                                }
-                                ?>
+                    }
+            ?>
                     </div>
                 </section>
                 <?php
-                    }
-                }
-                ?>
+        }
+    }
+?>
             </div>
 
 
