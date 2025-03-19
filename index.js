@@ -10,5 +10,7 @@ app.use(express.json())
 
 // testing 
 app.get("/", (req, res) => res.json("Hello, This Works"));
-app.use("/api/email", require("./router/email"))
+
+app.use("/api/email", require("./router/email"));
+
 app.listen(port, () => console.log(`http://localhost:${port}`))
