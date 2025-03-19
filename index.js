@@ -8,7 +8,7 @@ app.use(cors())
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 
-// testing 
+// testin
 app.get("/", (req, res) => res.json("Hello, This Works"));
 
 app.use("/api/email", require("./router/email"));
